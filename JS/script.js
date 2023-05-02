@@ -6,13 +6,16 @@
 function displaySeconds() {
     const seconds = Math.floor((new Date() - startTime) / 1000);
     const minutes = Math.floor(seconds / 60);
+
     const secondsText = seconds === 1 ? "second" : "seconds";
     const minutesText = minutes === 1 ? "minute" : "minutes";
     const displayText = minutes > 0
+
       ? `${minutes} ${minutesText} have passed`
       : `${seconds} ${secondsText} have passed`;
+
     document.getElementById("timer").textContent = displayText;
   }
-  
+
   const startTime = new Date();
   setInterval(displaySeconds, 1000);
